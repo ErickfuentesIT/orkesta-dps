@@ -154,3 +154,57 @@ input:focus {
     margin-top: 0.25rem;
   }
 }
+
+/* Sección de validación de login / register */
+
+.form-validations {
+  background-color: #fee2e2; /* rojo muy claro */
+  border: 1px solid #ef4444; /* rojo base */
+  color: #991b1b; /* rojo oscuro para el texto */
+  border-radius: 0.5rem; /* esquinas más suaves */
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.875rem; /* texto más pequeño */
+  line-height: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* un poco de sombra */
+}
+
+.form-validations ul {
+  margin: 0.25rem 0;
+  padding-left: 1.25rem;
+  list-style-type: disc; /* bullets para lista clara */
+}
+
+.form-validations small {
+  display: block;
+}
+
+/* Layout general styles */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* NavBar styles */
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111827;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+/* Content from layout styles */
+.content-ly {
+  display: flex;
+  gap: 1rem;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 15%;
+  background-color: #334155;
+  border-top: 1px solid white;
+}
