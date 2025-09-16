@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+:root {
+  --btn-fill: #10b981; /* color principal */
+}
+
+/*LOGIN - REGISTER */
 .wrapper {
   display: flex;
   min-height: 100dvh;
@@ -31,31 +36,32 @@
 html,
 body {
   height: 100%;
+  font-family: "Nunito Sans", sans-serif;
 }
 .login-wrap {
   min-height: 100dvh;
   display: grid;
   place-content: center;
-  padding: 2rem;
+  gap: 2rem;
 }
 
 /* Grid del formulario */
 .form-grid {
   display: grid;
   grid-template-columns: max-content minmax(0, 22rem); /* Etiqueta | Campo */
-  gap: 0.75rem 1rem;
+  gap: 1rem 1rem;
   align-items: center;
 }
 
 /* Filas que deben ocupar ambas columnas */
-.span-2 {
-  grid-column: 1 / -1;
+.grid-column-2 {
+  grid-column: 2;
 }
 
 /* Estilos rápidos */
 input[type="text"],
 input[type="password"] {
-  width: 100%;
+  width: 20.5rem;
   height: 2.25rem;
   padding: 0 0.75rem;
   border: 1px solid #d1d5db;
@@ -72,15 +78,64 @@ input:focus {
   align-items: center;
   gap: 0.5rem;
 }
-button {
-  height: 2.5rem;
-  border: 0;
-  border-radius: 0.5rem;
-  background: #10b981;
-  color: white;
-  font-weight: 600;
+
+/* Estilo boton con sweep */
+
+.btn-sweep {
+  position: relative;
+  isolation: isolate; /* crea contexto para z-index */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.6rem;
+  border: 2px solid var(--btn-fill);
+  background: transparent;
+  color: var(--btn-fill);
+  font-weight: 700;
+  letter-spacing: 0.2px;
   cursor: pointer;
+  overflow: hidden;
+  transition: color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  width: 45%;
 }
+
+.btn-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1; /* queda detrás del texto */
+  background: var(--btn-fill);
+  transform: scaleX(0); /* empieza vacío */
+  transform-origin: left; /* avanza de izquierda a derecha */
+  transition: transform 0.35s ease;
+}
+
+.btn-sweep:hover,
+.btn-sweep:focus-visible {
+  color: #fff;
+  border-color: var(--btn-fill);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--btn-fill), transparent 75%);
+  outline: none;
+}
+
+.btn-sweep:hover::before,
+.btn-sweep:focus-visible::before {
+  transform: scaleX(1); /* llena completo */
+}
+
+.btn-sweep:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-sweep,
+  .btn-sweep::before {
+    transition: none !important;
+  }
+}
+
 .muted {
   font-size: 0.875rem;
   color: #6b7280;
