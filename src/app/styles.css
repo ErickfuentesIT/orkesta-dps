@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100dvh;
+  gap: 1rem;
+}
+
+.left {
+  flex: 0 0 35%;
+  background-color: #111827;
+}
+
+.left > section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvb;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Centrado de la tarjeta (opcional) */
+html,
+body {
+  height: 100%;
+}
+.login-wrap {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+}
+
+/* Grid del formulario */
+.form-grid {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 22rem); /* Etiqueta | Campo */
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+/* Filas que deben ocupar ambas columnas */
+.span-2 {
+  grid-column: 1 / -1;
+}
+
+/* Estilos rápidos */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+}
+input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px #10b98133;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+button {
+  height: 2.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #10b981;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.muted {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.muted a {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+/* Móvil: colapsa a una sola columna */
+@media (max-width: 480px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-grid > label {
+    margin-top: 0.25rem;
+  }
+}
