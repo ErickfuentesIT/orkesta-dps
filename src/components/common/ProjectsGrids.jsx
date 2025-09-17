@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
+import Button from "../ui/Button";
 import ProjectCard from "./ProjectCard";
+import StaggerInput from "../ui/StaggerInput";
 
 export default function ProjectsGrid({
   projects = [],
@@ -22,7 +24,7 @@ export default function ProjectsGrid({
   return (
     <section className="admin">
       <header className="admin__head">
-        <h2 className="admin__title">{title}</h2>
+        <h1 className="admin__title">{title}</h1>
         <div className="admin__tools">
           <input
             type="search"
@@ -31,9 +33,15 @@ export default function ProjectsGrid({
             onChange={(e) => setQuery(e.target.value)}
             className="input"
           />
-          <button className="btn btn--success" onClick={onAdd}>
+          <StaggerInput
+            id="buscar"
+            text="Buscar"
+            delay={50}
+            className="form-control"
+          />
+          <Button className="btn-sweep" onClick={onAdd}>
             + Agregar Proyecto
-          </button>
+          </Button>
         </div>
       </header>
 

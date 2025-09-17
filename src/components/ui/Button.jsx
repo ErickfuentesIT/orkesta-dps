@@ -3,9 +3,15 @@ export default function Button({
   children,
   type,
   disabled = false,
+  onClick,
 }) {
   return (
-    <button className={className} type={type} disabled={disabled}>
+    <button
+      className={className}
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
