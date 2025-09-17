@@ -31,7 +31,10 @@ export default function FirstForm({ title = "Form title", isLogin = true }) {
     if (res.ok) {
       navigate("/app/projects", { replace: true });
     } else {
-      setError("root", { type: "manual", message: "Credenciales inválidas" });
+      setError("root", {
+        type: "manual",
+        message: "Credenciales inválidas, intente nuevamente",
+      });
     }
   };
 
@@ -136,6 +139,7 @@ export default function FirstForm({ title = "Form title", isLogin = true }) {
               <small>{errors.confirmPassword.message}</small>
             )}
           </ul>
+          <ul>{errors.root && <small>{errors.root.message}</small>}</ul>
         </section>
       )}
     </>
