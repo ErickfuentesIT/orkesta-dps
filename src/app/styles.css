@@ -5,6 +5,7 @@
 
 :root {
   --btn-fill: #10b981; /* color principal */
+  --seconday: #334133;
   --bg: #faf7f2;
   --text: #0f172a;
   --muted: #6b7280;
@@ -13,6 +14,13 @@
   --info: #0ea5e9;
   --box-border: #34d399; /* borde verde claro del contenedor */
   --box-bg: #ecfdf5; /* fondo suave del contenedor */
+
+  --sb-bg: #2c3948;
+  --sb-fg: #e6eef6;
+  --sb-muted: #b7c3cf;
+  --sb-accent: #17c6a3; /* verde activo */
+  --sb-hover: rgba(255, 255, 255, 0.08);
+  --radius: 10px;
 }
 
 /*LOGIN - REGISTER */
@@ -271,20 +279,6 @@ input:focus {
   gap: 8px;
 }
 
-/* Input búsqueda */
-.input {
-  height: 36px;
-  width: 240px;
-  padding: 0 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  outline: none;
-}
-.input:focus {
-  border-color: var(--success);
-  box-shadow: 0 0 0 3px var(--ring);
-}
-
 /* Caja contenedora de proyectos */
 .admin__box {
   border: 2px solid var(--box-border);
@@ -410,31 +404,30 @@ input:focus {
 /* From Uiverse.io by liyaxu123, STAGGER INPUT COMPONENT */
 .form-control {
   position: relative;
-  margin: 20px 0 40px;
-  width: 190px; /* cámbialo según tu layout */
+  width: 350px; /* cámbialo según tu layout */
 }
 
 .form-control input {
   background-color: transparent;
   border: 0;
-  border-bottom: 2px #fff solid;
+  border-bottom: 2px black solid;
   display: block;
-  width: 100%;
-  padding: 15px 0;
+  width: 90%;
   font-size: 18px;
-  color: #fff;
+  color: black;
+  border-radius: 0px;
 }
 
 /* foco */
 .form-control:focus-within input {
   outline: 0;
-  border-bottom-color: lightblue;
+  border-bottom-color: black;
 }
 
 .form-control label {
   position: absolute;
   top: 15px;
-  left: 0;
+  left: 5px;
   pointer-events: none;
 }
 
@@ -451,7 +444,103 @@ input:focus {
 /* mover letras cuando hay foco o texto */
 .form-control:focus-within label span,
 .form-control input:not(:placeholder-shown) + label span {
-  color: lightblue;
-  transform: translateY(-30px);
+  color: var(--seconday);
+  transform: translateY(-35px);
   opacity: 1;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar:first-child {
+  padding-top: 2%;
+}
+
+.sb {
+  width: 20%;
+  height: 100%;
+  background: var(--sb-bg);
+  color: var(--sb-fg);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+}
+
+.sb__nav {
+  flex: 1;
+}
+
+.sb__item,
+.sb__logout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 28px 1fr 18px;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 8px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.sb__item:hover,
+.sb__logout:hover {
+  background: var(--sb-hover);
+}
+
+.sb__icon {
+  opacity: 0.9;
+}
+.sb__label {
+  text-align: left;
+}
+
+.sb__chev {
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
+  opacity: 0.8;
+}
+.sb__chev.is-open {
+  transform: rotate(0deg);
+}
+
+/* Sublista */
+.sb__list {
+  list-style: none;
+  margin: 6px 0 10px 0;
+  padding-left: 36px;
+  display: grid;
+  gap: 6px;
+}
+
+.sb__subitem {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--sb-fg);
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.sb__subitem:hover {
+  background: var(--sb-hover);
+}
+
+/* Activo */
+.sb__subitem.is-active {
+  background: var(--sb-accent);
+  color: #083b34;
+  font-weight: 600;
+}
+
+/* Footer botón */
+.sb__logout {
+  margin-top: auto;
 }

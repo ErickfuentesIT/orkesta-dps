@@ -11,7 +11,7 @@ const demoProjects = [
   },
   { id: 3, name: "Portal Clientes", owner: "User2", createdAt: "14-09-2025" },
   { id: 4, name: "App Móvil", owner: "User3", createdAt: "14-09-2025" },
-  { id: 4, name: "App Móvil", owner: "User3", createdAt: "14-09-2025" },
+  { id: 5, name: "App Móvil", owner: "User3", createdAt: "14-09-2025" },
 ];
 
 export default function ProjectList() {
@@ -20,7 +20,7 @@ export default function ProjectList() {
       <ProjectsGrid
         projects={demoProjects}
         onAdd={() => alert("Agregar proyecto")}
-        onEdit={(p) => alert("Editar: " + p.name)}
+        onEdit={(p) => alert("Visualizar: " + p.name)}
       />
     </div>
   );

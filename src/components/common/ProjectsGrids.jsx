@@ -7,7 +7,7 @@ export default function ProjectsGrid({
   projects = [],
   onAdd,
   onEdit,
-  title = "Panel administrativo",
+  title = "Panel Administrativo",
 }) {
   const [query, setQuery] = useState("");
 
@@ -21,23 +21,20 @@ export default function ProjectsGrid({
     );
   }, [projects, query]);
 
+  function handleQuery(sQuery) {
+    setQuery(sQuery);
+  }
+
   return (
     <section className="admin">
       <header className="admin__head">
         <h1 className="admin__title">{title}</h1>
         <div className="admin__tools">
-          <input
-            type="search"
-            placeholder="Buscar proyecto"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="input"
-          />
           <StaggerInput
             id="buscar"
             text="Buscar"
             delay={50}
-            className="form-control"
+            onChange={handleQuery}
           />
           <Button className="btn-sweep" onClick={onAdd}>
             + Agregar Proyecto

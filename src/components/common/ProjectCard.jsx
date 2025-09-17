@@ -1,6 +1,4 @@
-import Button from "../ui/Button";
-
-export default function ProjectCard({ project, onEdit, onClick }) {
+export default function ProjectCard({ project, onEdit }) {
   const { name, owner, createdAt } = project;
 
   return (

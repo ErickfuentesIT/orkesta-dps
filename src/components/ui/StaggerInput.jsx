@@ -5,19 +5,21 @@ export default function StaggerButton({
   text = "Label",
   delay = 50,
   className = "",
-  inputProps = {},
+  onChange,
 }) {
+  function handleSearch(e) {
+    onChange(e.target.value);
+  }
   const chars = useMemo(() => Array.from(text), [text]);
   return (
     <div className={`form-control ${className}`}>
       <input
         id={id}
-        // Usa text por defecto; puedes sobreescribir con inputProps
         type="text"
         required
-        placeholder=" " // importante para :placeholder-shown
+        placeholder=" "
         autoComplete="off"
-        {...inputProps}
+        onChange={handleSearch}
       />
 
       <label htmlFor={id} style={{ "--delay": `${delay}ms` }}>
