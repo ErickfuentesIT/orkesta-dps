@@ -254,9 +254,9 @@ input:focus {
 /* Projects */
 
 .admin {
-  padding: 1.5rem;
   max-width: 100%;
   width: 100%;
+  color: black;
 }
 
 .admin__head {
@@ -269,8 +269,7 @@ input:focus {
 }
 
 .admin__title {
-  font-size: 20px;
-  margin: 0;
+  font-size: 25px;
 }
 
 .admin__tools {
@@ -291,7 +290,7 @@ input:focus {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 1px 12px;
   align-items: center;
   justify-items: center;
 }
@@ -320,7 +319,8 @@ input:focus {
 /* From Uiverse.io by ElSombrero2, CARDS DE PROYECTOS */
 .card {
   width: 90%;
-  height: 80%;
+  height: 70%;
+  aspect-ratio: 16 / 9;
   background: #111827;
   display: flex;
   justify-content: center;
@@ -330,14 +330,14 @@ input:focus {
   box-shadow: 0px 0px 3px 1px #00000088;
   cursor: pointer;
   padding: 1.5rem 0.5rem;
-  border-radius: 5px;
+  border-radius: 0.75rem;
 }
 
 .card .content {
-  border-radius: 5px;
+  border-radius: 12px;
   background: #111827;
   width: 90%;
-  height: 275px;
+  height: 95%;
   z-index: 1;
   padding: 20px;
   color: white;
@@ -451,18 +451,9 @@ input:focus {
 
 /* SIDEBAR */
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.sidebar:first-child {
-  padding-top: 2%;
-}
-
 .sb {
   width: 20%;
-  height: 100%;
+  height: auto;
   background: var(--sb-bg);
   color: var(--sb-fg);
   display: flex;

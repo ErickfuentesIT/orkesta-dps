@@ -7,7 +7,7 @@ export default function ProjectsGrid({
   projects = [],
   onAdd,
   onEdit,
-  title = "Panel Administrativo",
+  title = "Panel Administrativo > Tus Proyectos",
 }) {
   const [query, setQuery] = useState("");
 

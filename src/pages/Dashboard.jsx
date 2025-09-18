@@ -11,7 +11,6 @@ const projects = [
 export default function Dashboard() {
   return (
     <div className="layout">
-      <NavBar />
       <div className="content-ly">
         <SideBar
           projects={projects}
